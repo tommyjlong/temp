@@ -1,0 +1,429 @@
+// Aeotec Ltd. ZWA023-A
+// Smart Switch 7
+{
+	"manufacturer": "Aeotec Ltd.",
+	"manufacturerId": "0x0371",
+	"label": "ZWA023",
+	"description": "Smart Switch 7",
+	"devices": [
+		{
+			"productType": "0x0103",
+			"productId": "0x0017"
+		}
+	],
+	"firmwareVersion": {
+		"min": "0.0",
+		"max": "255.255"
+	},
+	"supportsZWavePlus": true,
+	"paramInformation": {
+		"1": {
+			"label": "LED Setting",
+			"description": "Set the reaction of LED setting.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 2,
+			"defaultValue": 2,
+			"options": [
+				{
+					"label": "LED Disabled. LED will only be used for normal network operations",
+					"value": 0
+				},
+				{
+					"label": "Night Light Mode. Turn on between particular times only.",
+					"value": 1
+				},
+				{
+					"label": "On/Off Mode. Display On/Off Status",
+					"value": 2
+				}
+			]
+		},
+		"2[0xFF0000]": {
+			"label": "Night Light ON time (hour).",
+			"description": "This BCD encoded parameter is used to configure the Night Light ON time (hour). Only useful when parameter 1 is set to 1. User can use Color CC to change the Night Light color (default Red). Default = 0x18 (6:00:00pm)",
+			"unit": "hour",
+			"valueSize": 4,
+			"minValue": 0,
+			"maxValue": 35,
+			"defaultValue": 24
+		},
+		"2[0xFF00]": {
+			"label": "Night Light ON time (minute).",
+			"description": "This BCD encoded parameter is used to configure the Night Light ON time (minute). Only useful when parameter 1 is set to 1. User can use Color CC to change the Night Light color (default Red). Default = 0x00 (6:00:00pm)",
+			"unit": "minute",
+			"valueSize": 4,
+			"minValue": 0,
+			"maxValue": 89,
+			"defaultValue": 0
+		},
+		"2[0xFF]": {
+			"label": "Night Light ON time (second).",
+			"description": "This BCD encoded parameter is used to configure the Night Light ON time (second). Only useful when parameter 1 is set to 1. User can use Color CC to change the Night Light color (default Red). Default = 0x00 (6:00:00pm)",
+			"unit": "second",
+			"valueSize": 4,
+			"minValue": 0,
+			"maxValue": 89,
+			"defaultValue": 0
+		},
+		"3[0xFF0000]": {
+			"label": "Night Light OFF Time (hour)",
+			"description": "This BCD encoded parameter is used to configure the Night Light OFF time (hour). Only useful when parameter 1 is set to 1. Default = 0x06 (6:00:00am)",
+			"unit": "hour",
+			"valueSize": 4,
+			"minValue": 0,
+			"maxValue": 89,
+			"defaultValue": 6,
+			"unsigned": true
+		},
+		"3[0xFF00]": {
+			"label": "Night Light OFF Time (minute)",
+			"description": "This BCD encoded parameter is used to configure the Night Light OFF time (minute). Only useful when parameter 1 is set to 1. Default = 0x00 (6:00:00am)",
+			"unit": "minute",
+			"valueSize": 4,
+			"minValue": 0,
+			"maxValue": 89,
+			"defaultValue": 0,
+			"unsigned": true
+		},
+		"3[0xFF]": {
+			"label": "Night Light OFF Time (second)",
+			"description": "This BCD encoded parameter is used to configure the Night Light OFF time (second). Only useful when parameter 1 is set to 1. Default = 0x00 (6:00:00am)",
+			"unit": "second",
+			"valueSize": 4,
+			"minValue": 0,
+			"maxValue": 89,
+			"defaultValue": 0
+		},
+		"4": {
+			"label": "LED Blink Duration",
+			"description": "Set the blink duration in seconds. 0 - indicates no blinking. 1~255 - sets the duration",
+			"unit": "seconds",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 255,
+			"defaultValue": 0
+		},
+		"5": {
+			"label": "LED Blink Speed",
+			"description": "Sets the number of blinks per second. Set between 1 and 24",
+			"unit": "Hz",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 1,
+			"maxValue": 24,
+			"defaultValue": 5
+		},
+		"6": {
+			"label": "Send Alert When In Use",
+			"description": "Send alert when in use. A Scene Activation Set command will be sent when energy draw is above this setting value. 0 - disable. Set 1~3000 - enable. Units - W",
+			"unit": "W",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 3000,
+			"defaultValue": 100
+		},
+		"7": {
+			"label": "Plug Always On",
+			"description": "Prevents the plug from being turned off via its button.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 2,
+			"defaultValue": 0,
+			"allowManualEntry": false,
+			"options": [
+				{
+					"label": "Plug will operate as normal and button can be used to turn the plug on or off.",
+					"value": 0
+				},
+				{
+					"label": "Button on the plug will be disabled for on and off commands, but still work for network inclusion and exclusion.",
+					"value": 1
+				},
+				{
+					"label": "Plug will ignore any commands to turn it off and it will ignore any use of the button (but still work for network inclusion and exclusion)",
+					"value": 2
+				}
+			]
+		},
+		"8": {
+			"label": "Power Outage Action",
+			"description": "Set the plugs action in case of power outage.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 2,
+			"defaultValue": 0,
+			"allowManualEntry": false,
+			"options": [
+				{
+					"label": "Retain last status",
+					"value": 0
+				},
+				{
+					"label": "Power ON",
+					"value": 1
+				},
+				{
+					"label": "Power OFF",
+					"value": 2
+				}
+			]
+		},
+		"9": {
+			"label": "Group3 Scene Id",
+			"description": "Set the scene id to use when Scene Activation Set Command is sent to group 3. For use with parameter 6.",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 1,
+			"maxValue": 255,
+			"defaultValue": 255
+		},
+		"10": {
+			"label": "Overload Threshold",
+			"description": "Overload Protection becomes active when power exceeds this threshold.  The switch will be turned off and an over-load notification will be sent. 0 - Disable Overload Protection.",
+			"unit": "W",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 1800,
+			"defaultValue": 1800
+		},
+		"11": {
+			"label": "Overvoltage Threshold",
+			"description": "Overvoltage Protection becomes active when voltage exceeds this threshold.  The switch will be turned off and an over-voltage notification will be sent. 0 - Disable Overvoltage Protection.1 through 94 - will set value to 95",
+			"unit": "V",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 255,
+			"defaultValue": 135
+		},
+		"19": {
+			"label": "Threshold Check Time",
+			"description": "Set the interval for checking thresholds. 0 - disable all threshold checking.",
+			"unit": "seconds",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 255,
+			"defaultValue": 5
+		},
+		"20": {
+			"label": "kWh Report Threshold",
+			"description": "When to send a kWh report. 0 - Disable reporting.",
+			"unit": "kWh",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 10000,
+			"defaultValue": 100
+		},
+		"21": {
+			"label": "Watt Report Threshold",
+			"description": "When to send a Watt report. 0 - Disable reporting.",
+			"unit": "W",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 2500,
+			"defaultValue": 0
+		},
+		"22": {
+			"label": "Current Report Threshold",
+			"description": "When to send a Current report. 0 - Disable reporting.",
+			"unit": "A",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 150,
+			"defaultValue": 0
+		},
+		"23": {
+			"label": "Watt Automatic Report Interval.",
+			"description": "Set the interval that Watt reports will automatically be generated. 0 - Disable reporting. 1 through 30 - set to 30.",
+			"unit": "seconds",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 65535,
+			"defaultValue": 600
+		},
+		"24": {
+			"label": "kWh Automatic Report Interval.",
+			"description": "Set the interval that kWh reports will automatically be generated. 0 - Disable reporting. 1 through 30 - set to 30.",
+			"unit": "seconds",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 65535,
+			"defaultValue": 600
+		},
+		"25": {
+			"label": "Voltage Automatic Report Interval.",
+			"description": "Set the interval that Voltage reports will automatically be generated. 0 - Disable reporting. 1 through 30 - set to 30.",
+			"unit": "seconds",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 65535,
+			"defaultValue": 600
+		},
+		"26": {
+			"label": "Current Automatic Report Interval.",
+			"description": "Set the interval that Current reports will automatically be generated. 0 - Disable reporting. 1 through 30 - set to 30.",
+			"unit": "seconds",
+			"valueSize": 2,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 65535,
+			"defaultValue": 600
+		},
+		"30[0x01]": {
+			"label": "Switch will react to Smoke Alarms",
+			"description": "React to Smoke Alarms received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"30[0x02]": {
+			"label": "Switch will react to CO Alarms",
+			"description": "React to CO Alarms received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"30[0x04]": {
+			"label": "Switch will react to CO2 Alarms",
+			"description": "React to CO2 Alarms received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"30[0x08]": {
+			"label": "Switch will react to Heat Alarms",
+			"description": "React to Heat Alarms received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"30[0x10]": {
+			"label": "Switch will react to Water Alarms",
+			"description": "React to Water Alarms received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"30[0x20]": {
+			"label": "Switch will react to Access Control Alarms",
+			"description": "React to Access Control Alarms (Door/Window sensor) received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"30[0x40]": {
+			"label": "Switch will react to Home Security Alarms",
+			"description": "React to Home Security Alarms received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"30[0x80]": {
+			"label": "Switch will react to Motion Sensor Trigger",
+			"description": "React to Motion Sensor Trigger received from other Z-Wave devices.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 1,
+			"defaultValue": 0
+		},
+		"31": {
+			"label": "Switch reaction to alarm",
+			"description": "What do to when an enabled alarm is received. 0 - no reaction. 1- Turn Switch ON. 2- Turn Switch OFF. 3 through 255 number of 0.1 seconds alternating Switch turning ON/OFF.",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 255,
+			"defaultValue": 0,
+			"unsigned": true
+		},
+		"32": {
+			"label": "Release/Disable alarm",
+			"description": "Sets how you are able to disable Smart Switch 7s alarm state. 0 - one tap. 1- two tap. 2- four tap. 4 - press/hold. 5 through 255 will disable after number of seconds.",
+			"valueSize": 1,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 255,
+			"defaultValue": 1
+		},
+		"40": {
+			"label": "Auto OFF timer",
+			"description": "Set the number of seconds switch will automatically turn OFF after turning ON. 0 - Disable.",
+			"unit": "seconds",
+			"valueSize": 4,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 86400,
+			"defaultValue": 0
+		},
+		"41": {
+			"label": "Auto ON Timer.",
+			"description": "Set the number of seconds switch will automatically turn ON after turning OFF. 0 - Disable.",
+			"unit": "seconds",
+			"valueSize": 4,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 86400,
+			"defaultValue": 0
+		},
+		"42": {
+			"label": "Switch State Change Update",
+			"description": "Determine which reports are sent to Lifeline Group when output state is changed.",
+			"valueSize": 1,
+			"minValue": 0,
+			"maxValue": 2,
+			"defaultValue": 2,
+			"allowManualEntry": false,
+			"options": [
+				{
+					"label": "No report sent",
+					"value": 0
+				},
+				{
+					"label": "Send Basic Report",
+					"value": 1
+				},
+				{
+					"label": "Send Binary Switch Report",
+					"value": 2
+				}
+			]
+		},
+		"255": {
+			"label": "Factory Reset",
+			"description": "Factory reset or re-initialize the Smart Switch 7",
+			"valueSize": 4,
+			"unsigned": true,
+			"minValue": 0,
+			"maxValue": 4294967295,
+			"defaultValue": 0,
+			"options": [
+				{
+					"label": "Initialize all Config parameters to default values",
+					"value": 0
+				},
+				{
+					"label": "Factory reset and remove from network",
+					"value": 4294967295
+				}
+			]
+		}
+	}
+}
