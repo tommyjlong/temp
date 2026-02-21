@@ -1,0 +1,153 @@
+```
+[14:01:54] INFO: Beta mode enabled, using OpenThread built-in mDNS.
+[14:01:54] INFO: Web UI and REST API port are exposed, starting otbr-web.
+s6-rc: info: service s6rc-oneshot-runner: starting
+s6-rc: info: service s6rc-oneshot-runner successfully started
+s6-rc: info: service fix-attrs: starting
+s6-rc: info: service banner: starting
+s6-rc: info: service fix-attrs successfully started
+s6-rc: info: service legacy-cont-init: starting
+s6-rc: info: service legacy-cont-init successfully started
+-----------------------------------------------------------
+ Add-on: OpenThread Border Router
+ OpenThread Border Router add-on
+-----------------------------------------------------------
+ Add-on version: 2.16.4
+ You are running the latest version of this add-on.
+ System: Home Assistant OS 17.1  (amd64 / qemux86-64)
+ Home Assistant Core: 2026.2.2
+ Home Assistant Supervisor: 2026.02.2
+-----------------------------------------------------------
+ Please, share the above information when looking for help
+ or support in, e.g., GitHub, forums or the Discord chat.
+-----------------------------------------------------------
+s6-rc: info: service banner successfully started
+s6-rc: info: service otbr-agent: starting
+[14:01:54] INFO: Migrating OTBR settings if needed...
+2026-02-20 14:01:54 homeassistant asyncio[212] DEBUG Using selector: EpollSelector
+2026-02-20 14:01:54 homeassistant zigpy.serial[212] DEBUG Opening a serial connection to '/dev/serial/by-id/usb-Nabu_Casa_ZBT-2_9C139EAB33E0-if00' (baudrate=460800, xonxoff=False, rtscts=True)
+2026-02-20 14:01:54 homeassistant serialx.platforms.serial_posix[212] DEBUG Configuring serial port '/dev/serial/by-id/usb-Nabu_Casa_ZBT-2_9C139EAB33E0-if00'
+2026-02-20 14:01:54 homeassistant serialx.platforms.serial_posix[212] DEBUG Configuring serial port: [0, 0, 2147486896, 0, 4100, 4100, [b'\x03', b'\x1c', b'\x7f', b'\x15', b'\x04', 0, 0, b'\x00', b'\x11', b'\x13', b'\x1a', b'\x00', b'\x12', b'\x0f', b'\x17', b'\x16', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00', b'\x00']]
+2026-02-20 14:01:54 homeassistant serialx.platforms.serial_posix[212] DEBUG Setting low latency mode: True
+2026-02-20 14:01:54 homeassistant serialx.platforms.serial_posix[212] DEBUG Setting modem pins: ModemPins[dtr rts]
+2026-02-20 14:01:54 homeassistant serialx.platforms.serial_posix[212] DEBUG Setting TIOCMBIS: 0x00000006
+2026-02-20 14:01:54 homeassistant zigpy.serial[212] DEBUG Connection made: <serialx.platforms.serial_posix.PosixSerialTransport object at 0x7f54cf4c01d0>
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Sending frame SpinelFrame(header=SpinelHeader(transaction_id=0, network_link_id=0, flag=2), command_id=<CommandID.RESET: 1>, data=b'\x02')
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Sending data b'~\x80\x01\x02\xea\xf0~'
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Immediately writing b'~\x80\x01\x02\xea\xf0~'
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Sent 7 of 7 bytes
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Event loop woke up reader
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Received b'~\x80\x06\x00p\xeet~'
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Decoded HDLC frame: HDLCLiteFrame(data=b'\x80\x06\x00p')
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Parsed frame SpinelFrame(header=SpinelHeader(transaction_id=0, network_link_id=0, flag=2), command_id=<CommandID.PROP_VALUE_IS: 6>, data=b'\x00p')
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Sending frame SpinelFrame(header=SpinelHeader(transaction_id=3, network_link_id=0, flag=2), command_id=<CommandID.PROP_VALUE_GET: 2>, data=b'\x08')
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Sending data b'~\x83\x02\x08\xbc\x9a~'
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Immediately writing b'~\x83\x02\x08\xbc\x9a~'
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Sent 7 of 7 bytes
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Event loop woke up reader
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Received b'~\x83\x06\x08\xe4V\xac\xff\xfeL\xe7\xb6\xa7\x9a~'
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Decoded HDLC frame: HDLCLiteFrame(data=b'\x83\x06\x08\xe4V\xac\xff\xfeL\xe7\xb6')
+2026-02-20 14:01:54 homeassistant universal_silabs_flasher.spinel[212] DEBUG Parsed frame SpinelFrame(header=SpinelHeader(transaction_id=3, network_link_id=0, flag=2), command_id=<CommandID.PROP_VALUE_IS: 6>, data=b'\x08\xe4V\xac\xff\xfeL\xe7\xb6')
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Closing at the request of the application
+2026-02-20 14:01:54 homeassistant zigpy.serial[212] DEBUG Waiting for serial port to close
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Closing connection: None
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Closing file descriptor 7
+2026-02-20 14:01:54 homeassistant serialx.descriptor_transport[212] DEBUG Calling protocol `connection_lost` with exc=None
+2026-02-20 14:01:54 homeassistant zigpy.serial[212] DEBUG Connection lost: None
+Adapter settings file /data/thread/0_e456acfffe4ce7b6.data is the most recently used, skipping
+[14:01:54] INFO: Starting otbr-agent...
+[NOTE]-AGENT---: Running 0.3.0-624a7d98
+[NOTE]-AGENT---: Thread version: 1.4.0
+[NOTE]-AGENT---: Thread interface: wpan0
+[NOTE]-AGENT---: Radio URL: spinel+hdlc+uart:///dev/serial/by-id/usb-Nabu_Casa_ZBT-2_9C139EAB33E0-if00?uart-baudrate=460800&uart-flow-control
+[NOTE]-AGENT---: Radio URL: trel://enp1s0
+[NOTE]-ILS-----: Infra link selected: enp1s0
+55d.19:51:11.521 [C] P-SpinelDrive-: Software reset co-processor successfully
+00:00:00.027 [N] BorderRouting-: BR ULA prefix: fd12:1e52:b729::/48 (loaded)
+00:00:00.027 [N] BorderRouting-: Local on-link prefix: fdaf:77aa:4dae:faef::/64
+[WARN]-UTILS---: /usr/src/ot-br-posix/src/rest/network_diag_handler.cpp:1300 lacking some attributes for deviceId 6202d8c1156df461
+[WARN]-UTILS---: /usr/src/ot-br-posix/src/rest/network_diag_handler.cpp:1244 cannot get LeaderData while detached
+[WARN]-UTILS---: /usr/src/ot-br-posix/src/rest/rest_devices_coll.cpp:232 - AddItem - 6202d8c1156df461
+00:00:00.036 [N] Mle-----------: Role disabled -> detached
+00:00:00.036 [N] P-Netif-------: Changing interface state to up.
+00:00:00.038 [W] P-Netif-------: Failed to process request#2: No such process
+00:00:00.038 [W] P-Netif-------: Failed to process request#6: No such process
+Connection to :: 8081 port [tcp/tproxy] succeeded!
+s6-rc: info: service otbr-agent successfully started
+s6-rc: info: service otbr-agent-configure: starting
+Done
+Done
+s6-rc: info: service otbr-agent-configure successfully started
+s6-rc: info: service otbr-agent-rest-discovery: starting
+s6-rc: info: service otbr-web: starting
+s6-rc: info: service otbr-web successfully started
+[14:01:55] INFO: Starting otbr-web...
+[INFO]-WEB-----: Running 0.3.0-624a7d98
+[INFO]-WEB-----: Border router web started on wpan0
+[14:01:55] INFO: Successfully sent discovery information to Home Assistant.
+s6-rc: info: service otbr-agent-rest-discovery successfully started
+s6-rc: info: service legacy-services: starting
+s6-rc: info: service legacy-services successfully started
+00:00:11.947 [N] Mle-----------: RLOC16 a800 -> fffe
+00:00:12.261 [N] Mle-----------: Attach attempt 1, AnyPartition reattaching with Active Dataset
+00:00:13.105 [N] Mle-----------: RLOC16 fffe -> 0836
+00:00:13.107 [N] Mle-----------: Role detached -> child
+00:00:13.120 [W] P-Netif-------: Successfully added an external route fc00::/7 in kernel
+00:01:20.768 [N] Mle-----------: RLOC16 0836 -> a800
+00:01:20.770 [N] Mle-----------: Role child -> router
+00:01:20.770 [N] Mle-----------: Partition ID 0x1b3ebff0
+00:01:21.640 [W] Mle-----------: Failed to process Link Accept: Security
+08:35:58.727 [N] MeshForwarder-: Failed to send IPv6 UDP msg, len:90, chksum:945c, ecn:no, to:0x1400, sec:yes, error:NoAck, prio:low, radio:15.4
+08:35:58.727 [N] MeshForwarder-:     src:[fd6e:e481:2b84:1:a5c1:6578:9d06:f64f]:49981
+08:35:58.727 [N] MeshForwarder-:     dst:[fd6e:e481:2b84:1:69d8:a2a5:adc9:9250]:5540
+11:26:39.090 [N] MeshForwarder-: Failed to send IPv6 UDP msg, len:96, chksum:d510, ecn:no, to:668814a6892f2507, sec:no, error:NoAck, prio:net, radio:15.4
+11:26:39.090 [N] MeshForwarder-:     src:[fe80:0:0:0:6002:d8c1:156d:f461]:19788
+11:26:39.090 [N] MeshForwarder-:     dst:[fe80:0:0:0:6488:14a6:892f:2507]:19788
+11:26:40.572 [N] MeshForwarder-: Failed to send IPv6 UDP msg, len:96, chksum:c879, ecn:no, to:668814a6892f2507, sec:no, error:NoAck, prio:net, radio:15.4
+11:26:40.572 [N] MeshForwarder-:     src:[fe80:0:0:0:6002:d8c1:156d:f461]:19788
+11:26:40.572 [N] MeshForwarder-:     dst:[fe80:0:0:0:6488:14a6:892f:2507]:19788
+11:30:18.476 [N] MeshForwarder-: Failed to send mesh frame, len:99, to:0x4400, msrc:0xbc00, mdst:0x4400, hops:18, frag:yes, sec:yes, error:NoAck, prio:normal, radio:15.4
+11:30:18.476 [N] MeshForwarder-:     Frag tag:56e4, offset:0, size:679
+11:30:18.643 [N] MeshForwarder-: Failed to send mesh frame, len:99, to:0x4400, msrc:0xbc00, mdst:0x4400, hops:18, frag:yes, sec:yes, error:NoAck, prio:normal, radio:15.4
+11:30:18.643 [N] MeshForwarder-:     Frag tag:56e4, offset:112, size:679
+11:30:18.777 [N] MeshForwarder-: Failed to send mesh frame, len:99, to:0x4400, msrc:0xbc00, mdst:0x4400, hops:18, frag:yes, sec:yes, error:NoAck, prio:normal, radio:15.4
+11:30:18.777 [N] MeshForwarder-:     Frag tag:56e4, offset:200, size:679
+11:30:29.750 [N] MeshForwarder-: Failed to send IPv6 UDP msg, len:96, chksum:52ee, ecn:no, to:668814a6892f2507, sec:no, error:NoAck, prio:net, radio:15.4
+11:30:29.750 [N] MeshForwarder-:     src:[fe80:0:0:0:6002:d8c1:156d:f461]:19788
+11:30:29.750 [N] MeshForwarder-:     dst:[fe80:0:0:0:6488:14a6:892f:2507]:19788
+11:30:30.412 [N] MeshForwarder-: Failed to send IPv6 UDP msg, len:96, chksum:3829, ecn:no, to:668814a6892f2507, sec:no, error:NoAck, prio:net, radio:15.4
+11:30:30.412 [N] MeshForwarder-:     src:[fe80:0:0:0:6002:d8c1:156d:f461]:19788
+11:30:30.412 [N] MeshForwarder-:     dst:[fe80:0:0:0:6488:14a6:892f:2507]:19788
+13:28:23.776 [W] P-RadioSpinel-: radio tx timeout
+13:28:23.782 [C] P-RadioSpinel-: Failed to communicate with RCP - no response from RCP during initialization
+13:28:23.782 [C] P-RadioSpinel-: This is not a bug and typically due a config error (wrong URL parameters) or bad RCP image:
+13:28:23.782 [C] P-RadioSpinel-: - Make sure RCP is running the correct firmware
+13:28:23.782 [C] P-RadioSpinel-: - Double check the config parameters passed as `RadioURL` input
+13:28:23.782 [C] Platform------: HandleRcpTimeout() at radio_spinel.cpp:2013: RadioSpinelNoResponse
+[03:30:18] WARNING: otbr-agent exited with code 6 (by signal 0).
+otbr-ingress-deny-src
+otbr-ingress-deny-src-swap
+otbr-ingress-allow-dst
+otbr-ingress-allow-dst-swap
+[03:30:18] INFO: OTBR firewall teardown completed.
+s6-rc: info: service legacy-services: stopping
+s6-rc: info: service legacy-services successfully stopped
+s6-rc: info: service otbr-agent-rest-discovery: stopping
+s6-rc: info: service otbr-web: stopping
+s6-rc: info: service otbr-agent-rest-discovery successfully stopped
+[CRIT]-WEB-----: Stopping web server
+[03:30:18] INFO: otbr-web ended with exit code 0 (signal 0)...
+s6-rc: info: service otbr-web successfully stopped
+s6-rc: info: service otbr-agent-configure: stopping
+s6-rc: info: service otbr-agent-configure successfully stopped
+s6-rc: info: service otbr-agent: stopping
+s6-rc: info: service otbr-agent successfully stopped
+s6-rc: info: service legacy-cont-init: stopping
+s6-rc: info: service banner: stopping
+s6-rc: info: service banner successfully stopped
+s6-rc: info: service legacy-cont-init successfully stopped
+s6-rc: info: service fix-attrs: stopping
+s6-rc: info: service fix-attrs successfully stopped
+s6-rc: info: service s6rc-oneshot-runner: stopping
+s6-rc: info: service s6rc-oneshot-runner successfully stopped
+```
